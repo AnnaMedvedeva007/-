@@ -1,0 +1,571 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #191919;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+/* ШАПКА */
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 28px 60px;
+
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.logo {
+  color: #00d12f;
+  font-size: 32px;
+  font-weight: 900;
+}
+
+nav {
+  display: flex;
+  gap: 40px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 800;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #00d12f;
+}
+
+/* ЭКРАН 1 */
+
+.hero {
+  min-height: 100vh;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  padding-top: 120px;
+
+  background-size: cover;
+  background-position: center;
+
+  animation: changeHeroBg 15s infinite;
+}
+
+.hero h1 {
+  color: #00d12f;
+
+  font-size: 120px;
+  font-weight: 900;
+  text-transform: uppercase;
+
+  margin-top: 20px;
+
+  text-align: center;
+}
+
+/* СМЕНА ФОНА */
+
+@keyframes changeHeroBg {
+
+  0% {
+    background-image:
+      linear-gradient(rgba(255,255,255,0.2), rgba(0,0,0,0.35)),
+      url("hero1.jpg");
+  }
+
+  33% {
+    background-image:
+      linear-gradient(rgba(255,255,255,0.2), rgba(0,0,0,0.35)),
+      url("hero2.jpg");
+  }
+
+  66% {
+    background-image:
+      linear-gradient(rgba(255,255,255,0.2), rgba(0,0,0,0.35)),
+      url("hero3.jpg");
+  }
+
+  100% {
+    background-image:
+      linear-gradient(rgba(255,255,255,0.2), rgba(0,0,0,0.35)),
+      url("hero1.jpg");
+  }
+
+}
+
+/* ЭКРАН 2 */
+
+.about-project {
+  min-height: 100vh;
+
+  background: #191919;
+
+  padding: 130px 70px 60px;
+  scroll-margin-top: 88px;
+}
+
+.about-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  margin-bottom: 40px;
+}
+
+.year {
+  color: #00d12f;
+
+  font-size: 42px;
+  font-weight: 900;
+}
+
+.motto {
+  font-size: 22px;
+  font-weight: 900;
+
+  text-align: right;
+
+  max-width: 900px;
+}
+
+.about-main {
+  display: grid;
+  grid-template-columns: minmax(520px, 46vw) minmax(420px, 1fr);
+
+  gap: 50px;
+
+  align-items: center;
+}
+
+.about-images {
+  position: relative;
+
+  min-height: clamp(420px, 35vw, 520px);
+  max-width: 100%;
+
+  overflow: hidden;
+}
+
+.phone-img {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: clamp(190px, 15vw, 260px);
+}
+
+.laptop-img {
+  position: absolute;
+
+  left: clamp(120px, 10vw, 170px);
+  bottom: 0;
+
+  width: clamp(430px, 36vw, 620px);
+}
+
+.about-text h2 {
+  color: #00d12f;
+
+  font-size: clamp(58px, 5vw, 82px);
+  font-weight: 900;
+
+  text-transform: uppercase;
+
+  margin-bottom: clamp(70px, 8vw, 150px);
+}
+
+.about-text p {
+  font-size: clamp(24px, 1.8vw, 30px);
+  font-weight: 900;
+
+  line-height: 1.25;
+}
+
+@media (max-width: 1200px) {
+
+  .about-main {
+    grid-template-columns: 1fr;
+  }
+
+  .about-images {
+    min-height: 520px;
+  }
+
+  .about-text h2 {
+    margin-bottom: 50px;
+  }
+
+}
+
+/* BMI */
+
+.bmi-section {
+  min-height: 100vh;
+
+  padding: 120px 60px;
+
+  background: #151515;
+}
+
+.bmi-section h2 {
+  font-size: 70px;
+
+  margin-bottom: 20px;
+}
+
+.bmi-section p {
+  font-size: 24px;
+
+  margin-bottom: 40px;
+}
+
+.bmi-form {
+  display: flex;
+
+  gap: 20px;
+
+  flex-wrap: wrap;
+}
+
+.bmi-form input {
+  padding: 20px;
+
+  width: 250px;
+
+  border: none;
+  border-radius: 10px;
+
+  font-size: 20px;
+}
+
+.bmi-form button {
+  padding: 20px 40px;
+
+  background: #00d12f;
+  color: black;
+
+  border: none;
+  border-radius: 10px;
+
+  font-size: 22px;
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+.result-box {
+  margin-top: 40px;
+
+  padding: 40px;
+
+  width: 600px;
+
+  background: #1f1f1f;
+
+  border-radius: 20px;
+
+  font-size: 28px;
+}
+
+.result-box h3 {
+  color: #00d12f;
+
+  margin-bottom: 20px;
+}
+
+/* ЦВЕТА BMI */
+
+.low {
+  border-left: 8px solid #00bfff;
+}
+
+.normal {
+  border-left: 8px solid #00d12f;
+}
+
+.overweight {
+  border-left: 8px solid orange;
+}
+
+.obesity {
+  border-left: 8px solid red;
+}
+
+/* УПРАЖНЕНИЯ */
+
+.knowledge-section {
+  padding: 120px 60px;
+}
+
+.knowledge-section h2 {
+  font-size: 90px;
+
+  margin-bottom: 80px;
+}
+
+.exercise-section {
+  margin-bottom: 120px;
+}
+
+.exercise-section h3 {
+  font-size: 40px;
+
+  margin-bottom: 40px;
+}
+
+.exercise-grid {
+  display: flex;
+  justify-content: center;
+}
+
+.exercise-card img {
+  width: 100%;
+  max-width: 1400px;
+
+  border-radius: 30px;
+
+  box-shadow: 0 0 30px rgba(0,0,0,0.5);
+}
+
+/* МОТИВАЦИЯ */
+
+.motivation,
+.motivation-screen-section {
+  padding-top: 88px;
+
+  background: #191919;
+}
+
+.motivation-screen {
+  width: 100%;
+  min-height: calc(100vh - 88px);
+
+  display: block;
+
+  object-fit: cover;
+  object-position: top center;
+}
+
+/* КОНТАКТЫ */
+
+.contacts-section {
+  min-height: 100vh;
+  padding-top: 88px;
+
+  background: #191919;
+}
+
+.contacts-hero {
+  width: 100%;
+
+  display: block;
+}
+
+.contacts-links {
+  padding: 34px 35px 58px;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 80px;
+
+  background: #191919;
+}
+
+.contacts-column {
+  display: grid;
+  gap: 42px;
+}
+
+.contacts-column-right {
+  align-content: start;
+  justify-items: end;
+  padding-top: 14px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.contacts-column-right .contact-item {
+  justify-content: flex-end;
+}
+
+.contact-text {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  flex-wrap: wrap;
+
+  color: #f4f4f4;
+
+  font-size: 22px;
+  line-height: 1.25;
+}
+
+.contact-text a {
+  color: #00d12f;
+
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.contact-item img {
+  width: 119px;
+  height: 101px;
+
+  flex: 0 0 auto;
+  object-fit: cover;
+}
+
+.contact-item .contact-logo-small {
+  width: 77px;
+  height: 77px;
+}
+
+
+/* АДАПТИВ */
+
+@media (max-width: 1000px) {
+
+  header {
+    flex-direction: column;
+
+    gap: 20px;
+
+    padding: 25px;
+  }
+
+  nav {
+    gap: 18px;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+  }
+
+  .hero h1 {
+    font-size: 70px;
+  }
+
+  .about-top {
+    flex-direction: column;
+
+    gap: 20px;
+  }
+
+  .motto {
+    text-align: left;
+  }
+
+  .about-main {
+    grid-template-columns: 1fr;
+  }
+
+  .about-images {
+    min-height: auto;
+  }
+
+  .phone-img,
+  .laptop-img {
+    position: static;
+
+    width: 100%;
+
+    margin-bottom: 25px;
+  }
+
+  .about-text h2 {
+    font-size: 56px;
+
+    margin-bottom: 50px;
+  }
+
+  .about-text p {
+    font-size: 24px;
+  }
+
+  .bmi-section,
+  .knowledge-section {
+    padding: 90px 25px;
+  }
+
+  .bmi-section h2,
+  .knowledge-section h2 {
+    font-size: 48px;
+  }
+
+  .result-box {
+    width: 100%;
+  }
+
+  .motivation,
+  .motivation-screen-section,
+  .contacts-section {
+    padding-top: 140px;
+  }
+
+  .motivation-screen {
+    min-height: auto;
+  }
+
+  .contacts-links {
+    padding: 32px 25px 55px;
+
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .contacts-column,
+  .contacts-column-right {
+    gap: 28px;
+    justify-items: stretch;
+    padding-top: 0;
+  }
+
+  .contact-item,
+  .contacts-column-right .contact-item {
+    justify-content: space-between;
+  }
+
+  .contact-text {
+    font-size: 18px;
+  }
+
+}
+/* АНИМАЦИЯ ПОЯВЛЕНИЯ */
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(60px);
+
+  animation: fadeUp 1s ease forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
